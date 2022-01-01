@@ -1,0 +1,5 @@
+#!/bin/python
+
+print("Content-type: text/html","\n")
+
+print("<h1>This is HTML!</h1>")

@@ -1,0 +1,5 @@
+#!/bin/python
+
+print("Content-type: text/plain","\n\n")
+
+print("This is TXT!")

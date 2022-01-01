@@ -1,0 +1,6 @@
+#!/bin/python
+import os
+
+print("Content-type: text/plain")
+print("Status: 777 Jackpot! hahaha lol","\n")
+print('JACKPOT!')

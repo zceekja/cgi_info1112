@@ -1,0 +1,5 @@
+#!/bin/python
+print("Content-type: text/html")
+print("Status: 831 I love you!","\n")
+
+print("<h1>I love you!</h1>")

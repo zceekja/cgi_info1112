@@ -1,0 +1,51 @@
+#!/bin/python
+import urllib.parse
+import os
+if "QUERY_STRING"  not in os.environ:
+	print("Content-type: text/html","\n\n")
+	print("<html>")
+	print("<body>")
+	print("<h2>Calculator</h2>")
+	print('<form action ="calculator" method="POST">')
+	print('  <label for="fname">Formula:</label><br>')
+	print('  <input type="text" id="fname" name="fname">')
+	print('<input type="submit" value="Submit">')
+	print("</form>")
+	print("<p>*, for multiply, / for divide, + for plus, - for minus</p>")
+	print("</body>")
+	print("</html>")
+	exit()
+
+string = urllib.parse.unquote(os.getenv('QUERY_STRING'))
+equation = string.split("=")[1]
+try:
+	answer = eval(equation)
+except:
+	print("Content-type: text/html","\n\n")
+	print("<html>")
+	print("<body>")
+	print("<h2>Calculator</h2>")
+	print('<form action ="calculator" method="POST">')
+	print('  <label for="fname">Formula:</label><br>')
+	print('  <input type="text" id="fname" name="fname">')
+	print('<input type="submit" value="Submit">')
+	print("</form>")
+	print("<p>*, for multiply, / for divide, + for plus, - for minus</p>")
+	print("<p>Invalid fomula</p>")
+	print("</body>")
+	print("</html>")
+	exit()
+print("Content-type: text/html","\n\n")	
+print("<html>")
+print("<body>")
+print("<h2>Calculator</h2>")
+print('<form action ="calculator" method="POST">')
+print('  <label for="fname">Formula:</label><br>')
+print('  <input type="text" id="fname" name="fname">')
+print('<input type="submit" value="Submit">')
+print("</form>")
+print("<p>*, for multiply, / for divide, + for plus, - for minus</p>")
+print("<p>{} = {}</p>".format(equation,answer))
+print("</body>")
+print("</html>")
+
